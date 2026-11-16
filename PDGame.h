@@ -3,7 +3,7 @@
 #include "Turn.h"
 
 class PDGame {
-private:
+protected:
     Turn m_myTurn;
     bool m_gameOver;
     int m_gameScore; //This was solved
@@ -11,9 +11,9 @@ private:
 public:
     PDGame();
     int getGameScore() const; //Step 1 from PDF.
+    virtual void playGame();
 private:
     void displayRules();
-    void playGame();
 };
 
 

@@ -1,6 +1,8 @@
 #include <iostream>
 #include "DIE.h"
+#include "Multiplayer.h"
 #include "PDGame.h"
+#include "PDGameV2.h"
 
 struct GameState {
     char choice;
@@ -12,7 +14,9 @@ struct GameState {
 };
 
 int main() {
-    PDGame game;
+    //PDGame game;
+    Multiplayer game;
+
 
     return 0;
 }

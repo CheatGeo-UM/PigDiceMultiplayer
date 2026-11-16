@@ -63,6 +63,6 @@ void Turn::roll() {
     }
     else {
         m_scoreThisTurn += m_myDie.getDieValue();
-        std::cout << " - Running score this turn: " << m_myDie.getDieValue() << std::endl;
+        std::cout << " - Running score this turn: " << m_scoreThisTurn << std::endl;
     }
 }
