@@ -5,9 +5,9 @@
 PDGame::PDGame() {
     m_gameOver = false;
     m_gameScore = 0;
-    m_myTurn.setParentGame(this); //Step 7 from PDF.
-    displayRules();
-    playGame();
+    //m_myTurn.setParentGame(this); //Step 7 from PDF.
+    //displayRules();
+    //playGame();
 }
 
 int PDGame::getGameScore() const{ //Step 2 from PDF.
@@ -23,21 +23,21 @@ void PDGame::displayRules() {
 }
 
 void PDGame::playGame() {
-    while (!m_gameOver) {
+    //while (!m_gameOver) {
         m_myTurn.takeTurn();
         m_gameScore += m_myTurn.getScoreThisTurn();
-        if (m_gameScore >= 20) {
-            m_gameOver = true;
-        }
-        else {
-            m_myTurn.resetTurnOver();
-            m_myTurn.resetScoreThisTurn();
-        }
-    }
-    std::cout << "\nYou finished with a final score of "
-              << m_gameScore << " in " << m_myTurn.getTurnCount() << " turn(s)!"
-              << std::endl;
-    std::cout << "Thanks for playing PIG Dice!";
+        //if (m_gameScore >= 20) {
+        //    m_gameOver = true;
+        //}
+        //else {
+        //    m_myTurn.resetTurnOver();
+        //    m_myTurn.resetScoreThisTurn();
+        //}
+    //}
+    //std::cout << "\nYou finished with a final score of "
+    //          << m_gameScore << " in " << m_myTurn.getTurnCount() << " turn(s)!"
+    //          << std::endl;
+    //std::cout << "Thanks for playing PIG Dice!";
 }
 
 

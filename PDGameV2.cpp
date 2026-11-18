@@ -3,11 +3,11 @@
 
 
 PDGameV2::PDGameV2(const std::string &playerName) {
+    int index = 1;
     if (!playerName.empty()) {
         m_playerName = playerName;
     }
     else {
-        int index = 1;
         m_playerName = "Anonymous Player " + std::to_string(index);
         index++;
     }
@@ -22,6 +22,7 @@ std::string PDGameV2::getPlayerName() const {
 }
 
 void PDGameV2::playGame() {
+    PDGame::playGame();
     if (m_gameScore < 50) {
         m_myTurn.resetTurnOver();
         m_myTurn.resetScoreThisTurn();

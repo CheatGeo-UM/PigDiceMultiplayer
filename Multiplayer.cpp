@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include "Multiplayer.h"
 
@@ -13,19 +14,21 @@ Multiplayer::Multiplayer () {
         std::getline (std::cin, tempName);
         m_players.emplace_back(tempName);
     }
-    //mpPlayGame();
+    mpPlayGame();
 }
 
 void Multiplayer::mpPlayGame() {
     m_players[0].displayRules();
     while (!m_gameOver) {
         for (int i = 0; i < m_players.size(); i++) {
-            std::cout << "\n\n" << m_players[i].getPlayerName();
+            std::cout << "\n\n" << m_players[i].getPlayerName()
+                      << " (Score:" << m_players[i].getGameScore() << ") - ";
             m_players.at(i).playGame();
             displayScoreboard();
         }
         checkForWinner();
     }
+
 }
 
 void Multiplayer::checkForWinner() {
@@ -37,7 +40,7 @@ void Multiplayer::checkForWinner() {
 
 void Multiplayer::displayScoreboard() {
 for (int i = 0; i < m_players.size(); i++)
-    std::cout << m_players.at(i).getPlayerName() << " (Score:" << m_players.at(i).getGameScore() << ") |";
+    std::cout << m_players.at(i).getPlayerName() << " (Score:" << m_players.at(i).getGameScore() << ") | ";
 }
 
 /*Multiplayer::Multiplayer {

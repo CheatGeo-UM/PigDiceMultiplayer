@@ -8,12 +8,11 @@ private:
     std::vector<PDGameV2> m_players;
     bool m_gameOver = false;
 public:
-    Multiplayer ();
+    Multiplayer();
     void mpPlayGame();
 private:
     void checkForWinner();
     void displayScoreboard();
 };
-
 
 #endif //PIGDICEMULTIPLAYER_PLAYERS_H

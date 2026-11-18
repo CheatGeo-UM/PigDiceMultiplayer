@@ -11,7 +11,7 @@ Turn::Turn() {
 
 void Turn::takeTurn() {
     m_turnCount += 1;
-    std::cout << "\nTURN " << m_turnCount  << " - Game Score: " << m_parentGame->getGameScore() << std::endl;
+    std::cout << "TURN " << m_turnCount << std::endl; //" - Game Score: " << m_parentGame->getGameScore() << std::endl;
     // Step 9 from PDF, which fixes the issue below.
     // ISSUE: Turn object "part" needs access to m_gameScore in "whole"
     while (!m_turnOver){
@@ -23,6 +23,7 @@ void Turn::takeTurn() {
         else if (m_choice == 'h'){
             m_turnOver = true;
             std::cout << "Score Banked This Turn: " << m_scoreThisTurn << std::endl;
+
         }
         else {
             std::cout << "Invalid Input!" << std::endl;
@@ -35,7 +36,6 @@ void Turn::setParentGame(PDGame* parentGame) { //Step 6 from PDF.
 }
 
 int Turn::getScoreThisTurn() const {
-
     return m_scoreThisTurn;
 }
 
