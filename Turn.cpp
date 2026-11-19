@@ -19,10 +19,12 @@ void Turn::takeTurn() {
         std::cin >> m_choice;
         if (m_choice == 'r') {
             roll();
+            std::cin.ignore(100, '\n');
         }
         else if (m_choice == 'h'){
             m_turnOver = true;
-            std::cout << "Score Banked This Turn: " << m_scoreThisTurn << std::endl;
+            std::cout << "Score Banked This Turn: " << m_scoreThisTurn << "\n" << std::endl;
+            std::cin.ignore(100, '\n');
 
         }
         else {
@@ -56,7 +58,7 @@ void Turn::roll() {
     std::cout << "Die: " << m_myDie.getDieValue();
     if (m_myDie.getDieValue() == 1) {
         std::cout << "\nTurn over. No score.\n"
-                  << "Score Banked This Turn: 0"
+                  << "Score Banked This Turn: 0\n"
                   << std::endl;
         m_scoreThisTurn = 0;
         m_turnOver = true;

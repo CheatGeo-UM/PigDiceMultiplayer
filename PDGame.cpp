@@ -6,6 +6,8 @@ PDGame::PDGame() {
     m_gameOver = false;
     m_gameScore = 0;
     //m_myTurn.setParentGame(this); //Step 7 from PDF.
+                                    //Don't remember if this had to be commented out,
+                                    //but as is, it doesn't seem to be needed.
     //displayRules();
     //playGame();
 }
@@ -22,7 +24,8 @@ void PDGame::displayRules() {
               << "* If you hold, you bank all points for the turn to your game score.\n";
 }
 
-void PDGame::playGame() {
+void PDGame::playGame() { //Commented out code here is what was no longer needed with the new multiplayer version.
+                          // It doesn't have to be put back in to play single player, just enter 1 when asked "How many players?"
     //while (!m_gameOver) {
         m_myTurn.takeTurn();
         m_gameScore += m_myTurn.getScoreThisTurn();

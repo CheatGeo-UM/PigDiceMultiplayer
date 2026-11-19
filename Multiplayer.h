@@ -12,7 +12,7 @@ public:
     void mpPlayGame();
 private:
     void checkForWinner();
-    void displayScoreboard();
+    void displayScoreboard() const;
 };
 
 #endif //PIGDICEMULTIPLAYER_PLAYERS_H
